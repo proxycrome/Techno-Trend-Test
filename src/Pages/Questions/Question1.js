@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { getUsersAsync } from '../../store/actions';
 
@@ -13,7 +14,6 @@ const Question1 = () => {
 
     const { users } = useSelector(state => state.Person);
 
-    console.log(users);
 
   return (
     <div className='mx-auto'>
@@ -27,7 +27,7 @@ const Question1 = () => {
             <tbody>
                 {users?.User_Details?.map(user => (
                     <tr key={user.user_id}>
-                        <td>{user.firstname}</td>
+                        <Link to={`/person/${user.user_id}`}><td>{user.firstname}</td></Link>
                         <td>{user.email}</td>
                     </tr>
                 ))}
