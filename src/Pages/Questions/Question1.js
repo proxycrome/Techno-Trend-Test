@@ -27,7 +27,7 @@ const Question1 = () => {
             <tbody>
                 {users?.User_Details?.map(user => (
                     <tr key={user.user_id}>
-                        <Link to={`/person/${user.user_id}`}><td>{user.firstname}</td></Link>
+                        <td><Link to={`/person/${user.user_id}`}>{user.firstname}</Link></td>
                         <td>{user.email}</td>
                     </tr>
                 ))}
